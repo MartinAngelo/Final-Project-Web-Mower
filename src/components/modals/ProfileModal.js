@@ -7,7 +7,7 @@ import {
     IconButton,
     Grid,
     Button,
-    
+
     Modal
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -164,7 +164,7 @@ export default function ProfileModal({ open, setOpen }) {
                         type="file"
                         onChange={handleImageChange}
                     />
-                  
+
                     <form className={classes.form} noValidate>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
@@ -208,7 +208,7 @@ export default function ProfileModal({ open, setOpen }) {
                             size="small"
                             autoComplete="current-password"
                         />
-                   
+
                         <TextField
                             variant="outlined"
                             margin="normal"

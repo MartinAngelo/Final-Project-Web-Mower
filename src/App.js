@@ -24,7 +24,7 @@ import MyProfile from "./pages/MyProfile";
 import Loading from "./pages/Loading";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import CreateProfile from "./pages/CreateProfile";
+import MyAccount from "./pages/MyAccount";
 
 
 
@@ -95,17 +95,12 @@ function App() {
             exact
           />
           <PrivateRoute
-            component={CreateProfile}
+            component={MyAccount}
             isAuth={state.isAuth}
-            path="/createprofile"
+            path="/MyAccount"
             exact
           />
-          <PrivateRoute
-            component={Notification}
-            isAuth={state.isAuth}
-            path="/notification"
-            exact
-          />
+        
        
           <PrivateRoute
             component={Loading}

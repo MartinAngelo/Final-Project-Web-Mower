@@ -89,16 +89,8 @@ export default function Register() {
         <div className="form">
 
 
-        <label htmlFor="firstName">Name</label>
-          <input
-            id="firstName"
-            label="firstName"
-            type="text"
-            name="firstName"
-            autoComplete="firstName"
-            onChange={handleChange("firstName")}
-            value={payload.firstName}
-          />
+        
+          
 
           <label htmlFor="username">Email</label>
           <input

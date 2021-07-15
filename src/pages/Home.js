@@ -278,7 +278,7 @@ export default function Home() {
                     <Grid container wrap="nowrap" spacing={2}>
                       <Grid item>
                         <Avatar
-                          src={ "./pic/pusa3.png"}
+                          src={"./pic/pusa3.png"}
                         />
                       </Grid>
                       <Grid item xs zeroMinWidth>

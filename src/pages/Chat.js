@@ -43,7 +43,7 @@ function Chat() {
         <SendMessage scroll={scroll} />
         <div ref={scroll}></div>
       </div>
-      </div>
+    </div>
   );
 }
 

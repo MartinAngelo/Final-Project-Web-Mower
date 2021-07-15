@@ -1,7 +1,7 @@
 .containermsg {
-  text-align: center;
-  width: 50%;
-  margin-left: 20%;
+  text-align   : center;
+  width        : 50%;
+  margin-left  : 20%;
   margin-bottom: 5%;
 }
 
@@ -14,7 +14,7 @@
   border-radius: 20px;
   box-shadow   : 0 0 10px #ff8941;
   align-items  : center;
-  width: auto;
+  width        : auto;
   height       : 45px;
 
 }
@@ -48,7 +48,7 @@
 .sendMsg {
   position        : fixed;
   display         : flex;
-  width: 60%;
+  width           : 60%;
   bottom          : 0;
   z-index         : 1;
   margin-left     : 0px;

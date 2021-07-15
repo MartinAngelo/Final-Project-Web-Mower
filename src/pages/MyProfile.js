@@ -16,7 +16,6 @@ import {
     Button
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 
 import ProfileModal from "../components/modals/ProfileModal";
 const drawerWidth = 240;
@@ -80,15 +79,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 export default function Home() {
-    const currentUser = firebase.auth().currentUser;
+   
     const [postCount, setPostCount] = useState(0);
     const classes = useStyles();
     const [userPosts, setPosts] = useState({
         posts: null,
     });
-    const [userLikes, setLikes] = useState({
-        likes: null,
-    });
+    
 
 
 
@@ -106,43 +103,8 @@ export default function Home() {
             .doc(id)
             .delete();
     };
-    const checkLike = (postID) => {
-        let test = false;
-        userLikes.likes && userLikes.likes.map((likes) => {
-            if (likes.postLiked === postID) {
-                test = true;
-            }
-        })
-        return test;
-    }
-    const likePost = (id) => {
-        if (checkLike(id) === true) {
-            db.collection("posts")
-                .doc(id)
-                .update({
-                    likes: -1
-                });
-            db.collection("users")
-                .doc(currentUser.uid)
-                .collection("likes")
-                .doc(id)
-                .delete();
-        } else {
-            db.collection("posts")
-                .doc(id)
-                .update({
-                    likes: +1
-                });
-            db.collection("users")
-                .doc(currentUser.uid)
-                .collection("likes")
-                .doc(id)
-                .set({
-                    postLiked: id,
-                })
-        }
-    }
-
+   
+    
     useEffect(() => {
         let abortController = new AbortController();
         const fetchData = () => {
@@ -184,7 +146,7 @@ export default function Home() {
                     snapshot.forEach((doc) => {
                         likes.unshift({ ...doc.data(), id: doc.id });
                     });
-                    setLikes({ likes: likes });
+                   
                 });
         };
 
@@ -248,7 +210,7 @@ export default function Home() {
                                 </Button>
 
                                 <Button
-                                alignItems="left"
+                                    alignItems="left"
                                     id="editProfile"
                                     variant="outlined"
                                     color="primary"
@@ -297,14 +259,7 @@ export default function Home() {
                                         <Divider className={classes.divider} />
                                         <CardActions disableSpacing>
 
-                                            <IconButton
-                                                color={checkLike(posts.id) === true ? "primary" : "default"}
-                                                className={classes.button}
-                                                onClick={() => likePost(posts.id)}
-                                            >
-                                                <FavoriteIcon />
-                                                <Typography> {posts.likes}</Typography>
-                                            </IconButton>
+                                         
                                             <IconButton
                                                 className={classes.button}
                                                 onClick={() => deletePost(posts.id)}

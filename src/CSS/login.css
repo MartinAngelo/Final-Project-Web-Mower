@@ -20,6 +20,7 @@ body {
   width : 30%;
   height: auto;
 }
+
 .pusa3 {
   width : 8%;
   height: auto;
@@ -56,7 +57,8 @@ h1 {
   color : #ff8941;
 }
 
-.header1 >h4 {  margin-top : 10px;
+.header1>h4 {
+  margin-top : 10px;
   font-weight: normal;
   font-size  : 15px;
   color      : rgba(0, 0, 0, 0.4);
@@ -78,9 +80,9 @@ h1 {
   font-size: 14px;
 }
 
-#password{
-  height       : 20px;
-  
+#password {
+  height: 20px;
+
   padding      : 99 16px;
   border       : 2px solid #ddd;
   border-radius: 4px;
@@ -88,8 +90,10 @@ h1 {
   outline      : 0;
   transition   : .2s;
 }
-.container1 #email, #confirmPass{
-  width: 270px;
+
+.container1 #email,
+#confirmPass {
+  width        : 270px;
   height       : 20px;
   padding      : 99 16px;
   border       : 2px solid #ddd;

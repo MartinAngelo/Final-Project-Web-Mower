@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import pusa from '../pic/pusa1.png'
 import firebase from "../utils/firebase";
 export default function Login() {
@@ -66,7 +66,7 @@ export default function Login() {
             name="password"
             label="Password"
             id="emails"
-            
+
             autoComplete="current-password"
             onChange={handleChange("pass")}
             value={payload.pass}
