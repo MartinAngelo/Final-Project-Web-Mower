@@ -20,43 +20,50 @@ import {
 } from "@material-ui/core";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
-
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    direction: "column",
+    height: "100vh",
+    width: "100vm",
+    alignItems: "center",
+    justifyContent: "center"
+  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
+      duration: theme.transitions.duration.leavingScreen
     }),
-    marginLeft: -drawerWidth,
+    marginLeft: -drawerWidth
   },
   contentShift: {
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+      duration: theme.transitions.duration.enteringScreen
     }),
-    marginLeft: 0,
+    marginLeft: 0
   },
   drawerHeader: {
     display: "flex",
     alignItems: "center",
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    marginBottom: 2,
+    marginBottom: 2
   },
   divider: {
     marginTop: 1,
-    marginBottom: 1,
+    marginBottom: 1
   },
   cardField: {
     marginLeft: 40,
-    marginRight: 40,
+    marginRight: 40
   },
   input: {
-    display: "none",
+    display: "none"
   },
   textPosts: {
     paddingBottom: 10
@@ -64,18 +71,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function Home() {
   const db = firebase.firestore();
-
+ 
   const classes = useStyles();
   const [userPosts, setPosts] = useState({
-    posts: null,
+    posts: null
   });
-
+ 
   const [avatar, setAvatar] = useState({
-    src: null,
+    src: null
   });
   const [post, setPost] = useState({
     postID: "",
-    postContent: "",
+    postContent: ""
   });
 
   const handleChange = (prop) => (e) => {
@@ -101,10 +108,11 @@ export default function Home() {
   const [profile, getProfile] = useState({
     userName: "",
     displayName: "",
-    displayPicture: false,
+    displayPicture: false
   });
 
-
+  
+ 
 
   useEffect(() => {
     let abortController = new AbortController();
@@ -122,30 +130,30 @@ export default function Home() {
           });
           setPosts({ posts: posts });
         });
-      getUser.get().then((doc) => {
-        if (doc.exists) {
-          getProfile({
-            userName: "" + doc.data().username,
-            displayName: doc.data().firstName + " " + doc.data().lastName,
-            displayPicture: doc.data().profilePic
-          });
-        }
-        if (doc.data().profilePic === true) {
-          fetchAvatar();
-        }
-      })
+      getUser
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            getProfile({
+              userName: "" + doc.data().username,
+              displayName: doc.data().firstName + " " + doc.data().lastName,
+              displayPicture: doc.data().profilePic
+            });
+          }
+          if (doc.data().profilePic === true) {
+            fetchAvatar();
+          }
+        })
         .catch((err) => {
           console.log(err);
         });
-      getUser
-        .collection("likes")
-        .onSnapshot((snapshot) => {
-          let likes = [];
-          snapshot.forEach((doc) => {
-            likes.unshift({ ...doc.data(), id: doc.id });
-          });
-
+      getUser.collection("likes").onSnapshot((snapshot) => {
+        let likes = [];
+        snapshot.forEach((doc) => {
+          likes.unshift({ ...doc.data(), id: doc.id });
         });
+       
+      });
     };
     fetchData();
     const fetchAvatar = () => {
@@ -155,10 +163,11 @@ export default function Home() {
         .getDownloadURL()
         .then((url) => {
           setAvatar({
-            src: url,
+            src: url
           });
-        }).catch(error => {
-          console.log(error)
+        })
+        .catch((error) => {
+          console.log(error);
         });
     };
     return () => {
@@ -166,13 +175,14 @@ export default function Home() {
       abortController.abort();
     };
   }, []);
+
   return (
     <div>
       <Navigation />
       <main>
         <div
           className={clsx(classes.content, {
-            [classes.contentShift]: true,
+            [classes.contentShift]: true
           })}
         >
           <div className={classes.drawerHeader} />
@@ -185,7 +195,7 @@ export default function Home() {
                 fullWidth
                 multiline
                 inputProps={{
-                  maxLength: 140,
+                  maxLength: 140
                 }}
                 onChange={handleChange("postContent")}
                 value={post.postContent}
@@ -197,7 +207,7 @@ export default function Home() {
                         src={avatar.src || ".././assets/images/profile.png"}
                       />
                     </InputAdornment>
-                  ),
+                  )
                 }}
               />
             </CardContent>
@@ -234,9 +244,7 @@ export default function Home() {
                   >
                     <Grid container wrap="nowrap" spacing={2}>
                       <Grid item>
-                        <Avatar
-                          src={"./pic/pusa3.png"}
-                        />
+                        <Avatar src={"./pic/pusa3.png"} />
                       </Grid>
                       <Grid item xs zeroMinWidth>
                         <div id="thisPost">
@@ -256,16 +264,17 @@ export default function Home() {
                     </Grid>
                     <Grid container wrap="nowrap" spacing={2}>
                       <Grid item xs zeroMinWidth>
-                        <Typography className={classes.textPosts}>{posts.postContent}</Typography>
+                        <Typography className={classes.textPosts}>
+                          {posts.postContent}
+                        </Typography>
                       </Grid>
                     </Grid>
                     <Divider className={classes.divider} />
                     <CardActions disableSpacing>
-
                       <IconButton
-
+              
                         className={classes.button}
-
+                       
                       >
                         <FavoriteIcon />
                         <Typography> {posts.likes}</Typography>
@@ -275,7 +284,6 @@ export default function Home() {
                 );
               })}
           </List>
-
         </div>
       </main>
     </div>

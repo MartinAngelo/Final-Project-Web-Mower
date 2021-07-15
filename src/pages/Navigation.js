@@ -19,11 +19,11 @@ const headersData = [
     href: "/home",
   },
   {
-    label: "MESSAGES",
+    label: "Messages",
     href: "/chat",
   },
   {
-    label: "MY ACCOUNT",
+    label: "My Account",
     href: "/profile",
   },
 

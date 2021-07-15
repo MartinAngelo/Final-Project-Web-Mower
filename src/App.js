@@ -8,11 +8,11 @@ import {
   BrowserRouter as Router,
   Redirect,
   Route,
-  Switch,
+  Switch
 } from "react-router-dom";
 
 //material ui//
-import { ThemeProvider } from "@material-ui/core";
+import { ThemeProvider, CircularProgress, makeStyles } from "@material-ui/core";
 
 //utils//
 import firebase from "./utils/firebase";
@@ -26,26 +26,27 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MyAccount from "./pages/MyAccount";
 
-
-
-
-
-
-
 import PrivateRoute from "./routers/PrivateRoute";
 import PublicRoute from "./routers/PublicRoute";
 
 import chat from "./pages/Chat";
 import SendMessage from "./pages/SendMessage";
 
-
-
-
 function App() {
   const [state, setState] = useState({
     isAuth: false,
-    isLoading: true,
+    isLoading: true
   });
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: "flex",
+      direction: "column",
+      height: "100vh",
+      width: "100vm",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }));
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -57,8 +58,17 @@ function App() {
     });
   }, []);
 
+  const classes = useStyles();
   if (state.isLoading) {
-    return <p>Loading..</p>;
+    return (
+      <div className={classes.root}>
+        <CircularProgress
+          size={150}
+          style={{ color: "rgba(255, 137, 65, 1)" }}
+        />
+        ;
+      </div>
+    );
   }
   return (
     <ThemeProvider theme={theme}>
@@ -100,8 +110,7 @@ function App() {
             path="/MyAccount"
             exact
           />
-        
-       
+
           <PrivateRoute
             component={Loading}
             isAuth={state.isAuth}
@@ -122,8 +131,6 @@ function App() {
             path="/SendMessage"
             exact
           />
-
-      
         </Switch>
       </Router>
     </ThemeProvider>
