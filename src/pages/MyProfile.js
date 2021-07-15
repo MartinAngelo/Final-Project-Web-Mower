@@ -127,8 +127,13 @@ export default function Home() {
                 .then((doc) => {
                     if (doc.exists) {
                         getProfile({
-                            userName: "@" + doc.data().username,
+                            userName: "" + doc.data().username,
+
+                            Fname: "" + doc.data().Fname,
+
                             displayName: doc.data().firstName + " " + doc.data().lastName,
+
+                            
 
                             bioDesc: "" + doc.data().ageDesc + " ",
                             displayPicture: doc.data().profilePic
@@ -182,9 +187,11 @@ export default function Home() {
 
                             <div className={classes.leftDiv}>
                                 <Typography variant="h5">
-                                    UserName:  {profile.userName}
+                                    Email:  {profile.userName}
                                 </Typography>
                             </div>
+
+                            
                             <div className={classes.leftDiv}>
                                 <Typography variant="h5" >
                                     Age:  {profile.bioDesc}Years old

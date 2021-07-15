@@ -202,7 +202,7 @@ export default function ProfileModal({ open, setOpen }) {
                             margin="normal"
                             fullWidth
                             name="username"
-                            label="Username"
+                            label="Email"
                             onChange={handleChange("userName")}
                             value={profile.userName}
                             size="small"
@@ -228,7 +228,7 @@ export default function ProfileModal({ open, setOpen }) {
                             className={classes.submit}
                             onClick={createprofile}
                         >
-                            Create my Profile
+                            Update my Profile
                         </Button>
                     </form>
                 </div>
