@@ -1,0 +1,87 @@
+.containermsg {
+  text-align: center;
+  width: 50%;
+  margin-left: 20%;
+  margin-bottom: 5%;
+}
+
+.msg {
+  display      : flex;
+  padding      : 20px 10px 0 20px;
+  margin       : 6px;
+  padding      : 9 6px;
+  border       : 2px solid #ddd;
+  border-radius: 20px;
+  box-shadow   : 0 0 10px #ff8941;
+  align-items  : center;
+  width: auto;
+  height       : 45px;
+
+}
+
+.sent {
+  background-color       : #ffa065;
+  color                  : white;
+  border-top-right-radius: 10px;
+  flex-direction         : row-reverse;
+
+
+  float : right;
+  border: none;
+}
+
+.received {
+  border                : none;
+  background-color      : #af4300;
+  border-top-left-radius: 10px;
+  float                 : left;
+  color                 : rgb(255, 255, 255);
+}
+
+.msgs {
+  margin        : 0px;
+  display       : flex;
+  flex-direction: column;
+  overflow-y    : auto;
+}
+
+.sendMsg {
+  position        : fixed;
+  display         : flex;
+  width: 60%;
+  bottom          : 0;
+  z-index         : 1;
+  margin-left     : 0px;
+  padding         : 10px;
+  padding-bottom  : 20px;
+  background-color: #ffffff;
+  overflow-y      : auto;
+}
+
+@media (max-width: 600px) {
+  p {
+    font-size: 20px;
+  }
+
+  .sent {
+    padding: 10px 10px 0 10px;
+  }
+
+  .received {
+    padding: 10px 10px 0 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  p {
+    font-size: 15px;
+  }
+
+  .sent {
+    padding: 7px 7px 0 7px;
+  }
+
+  .received {
+    padding: 7px 7px 0 7px;
+  }
+}

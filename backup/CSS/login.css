@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.container1 {
+  display         : flex;
+  height          : 100vh;
+  background-color: #ffffff;
+}
+
+.pusa {
+  width : 30%;
+  height: auto;
+}
+
+.left {
+  overflow           : hidden;
+  display            : flex;
+  flex-wrap          : wrap;
+  flex-direction     : column;
+  justify-content    : center;
+  animation-name     : left;
+  animation-duration : 0.5s;
+  animation-fill-mode: both;
+  animation-delay    : 0.5s;
+}
+
+.right {
+  flex               : 1;
+  background-color   : black;
+  transition         : 1s;
+  background-image   : url("../pic/frontbg.png");
+  background-size    : cover;
+  background-repeat  : no-repeat;
+  background-position: center;
+  width              : 100%;
+}
+
+
+
+.container1 .header1>h2,
+h1 {
+  margin: 0;
+  color : #ff8941;
+}
+
+.header1 >h4 {  margin-top : 10px;
+  font-weight: normal;
+  font-size  : 15px;
+  color      : rgba(0, 0, 0, 0.4);
+}
+
+.form {
+  max-width     : 100%;
+  display       : flex;
+  flex-direction: column;
+
+}
+
+.form>p {
+  text-align: right;
+}
+
+.form>p>a {
+  color    : #000;
+  font-size: 14px;
+}
+
+#password{
+  height       : 20px;
+  
+  padding      : 99 16px;
+  border       : 2px solid #ddd;
+  border-radius: 4px;
+  font-family  : 'Rubik', sans-serif;
+  outline      : 0;
+  transition   : .2s;
+}
+.container1 #email, #confirmPass{
+  width: 270px;
+  height       : 20px;
+  padding      : 99 16px;
+  border       : 2px solid #ddd;
+  border-radius: 4px;
+  font-family  : 'Rubik', sans-serif;
+  outline      : 0;
+  transition   : .2s;
+}
+
+.form-field:focus {
+  border-color: #0f7ef1;
+}
+
+.form>button {
+  padding       : 12px 10px;
+  border        : 0;
+  background    : #ff8941;
+  border-radius : 3px;
+  margin-top    : 10px;
+  color         : #fff;
+  letter-spacing: 1px;
+  font-family   : 'Rubik', sans-serif;
+
+  border-radius: 20px 20px;
+}
+
+.animation {
+  animation-name     : move;
+  animation-duration : .4s;
+  animation-fill-mode: both;
+  animation-delay    : 2s;
+
+}
+
+
+.a1 {
+  animation-delay: 1.5s;
+}
+
+.a2 {
+  animation-delay: 1.9s;
+}
+
+.a3 {
+  animation-delay: 2.0s;
+}
+
+.a4 {
+  animation-delay: 2.1s;
+}
+
+.a5 {
+  animation-delay: 2.2s;
+}
+
+.a6 {
+  animation-delay: 2.3s;
+}
+
+@keyframes move {
+  0% {
+    opacity   : 0;
+    visibility: hidden;
+    transform : translateY(-40px);
+  }
+
+  100% {
+    opacity   : 1;
+    visibility: visible;
+    transform : translateY(0);
+  }
+}
+
+@keyframes left {
+  0% {
+    opacity: 0;
+    width  : 0;
+  }
+
+  100% {
+    opacity: 1;
+    padding: 20px 40px;
+    width  : 350px;
+  }
+}
