@@ -125,7 +125,7 @@ export default function Home() {
       getUser.get().then((doc) => {
         if (doc.exists) {
           getProfile({
-            userName: "@" + doc.data().username,
+            userName: "" + doc.data().username,
             displayName: doc.data().firstName + " " + doc.data().lastName,
             displayPicture: doc.data().profilePic
           });
