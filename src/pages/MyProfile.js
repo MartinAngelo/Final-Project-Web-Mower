@@ -244,10 +244,11 @@ export default function Home() {
                                     disableElevation
                                     onClick={() => setProfileModal(true)}
                                 >
-                                    Edit Account
+                                    Update My Account
                                 </Button>
 
                                 <Button
+                                alignItems="left"
                                     id="editProfile"
                                     variant="outlined"
                                     color="primary"
@@ -255,7 +256,7 @@ export default function Home() {
                                     disableElevation
                                     onClick={() => signout(true)}
                                 >
-                                    Sign out
+                                    SIGNOUT
                                 </Button>
 
                             </div>

@@ -23,9 +23,7 @@ import Home from "./pages/Home";
 import MyProfile from "./pages/MyProfile";
 import Loading from "./pages/Loading";
 import Login from "./pages/Login";
-import Notification from "./pages/Notification";
 import Register from "./pages/Register";
-import Friends from "./pages/Friends";
 import CreateProfile from "./pages/CreateProfile";
 
 
@@ -108,12 +106,7 @@ function App() {
             path="/notification"
             exact
           />
-          <PrivateRoute
-            component={Friends}
-            isAuth={state.isAuth}
-            path="/friends"
-            exact
-          />
+       
           <PrivateRoute
             component={Loading}
             isAuth={state.isAuth}

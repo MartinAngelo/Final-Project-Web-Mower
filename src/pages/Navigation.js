@@ -13,12 +13,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-
-
-
-
-
-
 const headersData = [
   {
     label: "HOME",
@@ -163,7 +157,7 @@ export default function Header() {
 
   const femmecubatorLogo = (
     <Typography variant="h6" component="h1" className={logo}>
-      
+
       Meower
     </Typography>
   );
