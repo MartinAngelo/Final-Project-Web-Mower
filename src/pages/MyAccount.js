@@ -59,7 +59,7 @@ export default function CreateProfile() {
   const [profile, setProfile] = useState({
     firstName: "",
     lastName: "",
-    bioDesc: "",
+
     userName: "",
   });
 
@@ -118,7 +118,7 @@ export default function CreateProfile() {
         .set({
           firstName: profile.firstName,
           lastName: profile.lastName,
-          bioDesc: profile.bioDesc,
+
           username: profile.userName,
           profilePic: true,
         })
@@ -140,7 +140,7 @@ export default function CreateProfile() {
             setProfile({
               firstName: doc.data().firstName,
               lastName: doc.data().lastName,
-              bioDesc: doc.data().bioDesc,
+
               userName: doc.data().username,
               imageExists: doc.data().profilePic
             });
@@ -236,16 +236,7 @@ export default function CreateProfile() {
               value={profile.userName || ''}
               autoComplete="current-password"
             />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              fullWidth
-              name="biography"
-              label="Biography"
-              onChange={handleChange("bioDesc")}
-              value={profile.bioDesc || ''}
-              autoComplete="current-password"
-            />
+
 
             <Button
               type="submit"
