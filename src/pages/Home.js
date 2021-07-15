@@ -4,6 +4,10 @@ import Navigation from "../pages/Navigation";
 import clsx from "clsx";
 import firebase from "../utils/firebase";
 import { makeStyles } from "@material-ui/core/styles";
+
+
+
+import logologo from '../pic/logologo.png'
 import {
   TextField,
   Typography,
@@ -204,7 +208,7 @@ export default function Home() {
                   startAdornment: (
                     <InputAdornment position="start">
                       <Avatar
-                        src={avatar.src || ".././assets/images/profile.png"}
+                        src={logologo}
                       />
                     </InputAdornment>
                   )
@@ -244,7 +248,7 @@ export default function Home() {
                   >
                     <Grid container wrap="nowrap" spacing={2}>
                       <Grid item>
-                        <Avatar src={"./pic/pusa3.png"} />
+                        <Avatar src={logologo} />
                       </Grid>
                       <Grid item xs zeroMinWidth>
                         <div id="thisPost">
