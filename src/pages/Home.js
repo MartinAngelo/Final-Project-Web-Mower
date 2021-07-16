@@ -81,7 +81,7 @@ export default function Home() {
     posts: null
   });
 
-  
+
   const [post, setPost] = useState({
     postID: "",
     postContent: ""
@@ -142,7 +142,7 @@ export default function Home() {
               displayPicture: doc.data().profilePic
             });
           }
-         
+
         })
         .catch((err) => {
           console.log(err);

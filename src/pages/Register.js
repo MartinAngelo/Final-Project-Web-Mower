@@ -51,7 +51,7 @@ export default function Register() {
             .set({
               firstName: "First Name",
               lastName: "Last Name",
-          
+
 
               username: payload.email,
               profilePic: false,

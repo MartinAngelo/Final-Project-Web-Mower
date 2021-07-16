@@ -7,8 +7,6 @@ export default function Login() {
   const [payload, setPayload] = useState({
     email: "",
     pass: "",
-
-
   });
 
   const handleChange = (prop) => (e) => {

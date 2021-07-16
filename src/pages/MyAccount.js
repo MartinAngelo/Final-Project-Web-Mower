@@ -58,7 +58,6 @@ export default function CreateProfile() {
   const [profile, setProfile] = useState({
     firstName: "",
     lastName: "",
-
     userName: "",
   });
 
