@@ -175,7 +175,7 @@ export default function CreateProfile() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-        
+
           <input
             accept="image/*"
             className={classes.input}
