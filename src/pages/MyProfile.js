@@ -92,7 +92,7 @@ export default function Home() {
   const [profile, getProfile] = useState({
     userName: "",
     displayName: "",
-    ageDesc: "",
+  
 
     displayPicture: ""
   });
@@ -128,7 +128,6 @@ export default function Home() {
 
               displayName: doc.data().firstName + " " + doc.data().lastName,
 
-              bioDesc: "" + doc.data().ageDesc + " ",
               displayPicture: doc.data().profilePic
             });
           }
@@ -176,11 +175,7 @@ export default function Home() {
                 <Typography variant="h5">Email: {profile.userName}</Typography>
               </div>
 
-              <div className={classes.leftDiv}>
-                <Typography variant="h5">
-                  Age: {profile.bioDesc}Years old
-                </Typography>
-              </div>
+             
               <div className={classes.leftDiv}>
                 <Typography variant="h5">Post/s: {postCount}</Typography>
               </div>

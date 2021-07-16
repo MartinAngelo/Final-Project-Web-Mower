@@ -9,7 +9,6 @@ import {
   Grid,
   Container,
   Button,
-  Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 export default function CreateProfile() {
@@ -177,9 +176,7 @@ export default function CreateProfile() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h2" variant="h5">
-            Help your friends know you!
-          </Typography>
+        
           <input
             accept="image/*"
             className={classes.input}

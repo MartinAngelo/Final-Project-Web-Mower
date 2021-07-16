@@ -75,8 +75,7 @@ export default function ProfileModal({ open, setOpen }) {
     const [profile, setProfile] = useState({
         firstName: "",
         lastName: "",
-        bioDesc: "",
-        ageDesc: "",
+
         userName: "",
     });
     const handleChange = (prop) => (e) => {
@@ -131,10 +130,9 @@ export default function ProfileModal({ open, setOpen }) {
                 .update({
                     firstName: profile.firstName,
                     lastName: profile.lastName,
-                    bioDesc: profile.bioDesc,
-                    ageDesc: profile.ageDesc,
+
                     username: profile.userName,
-                    profilePic: true
+                   
                 })
                 .then(() => {
                     handleUpload();
@@ -209,17 +207,7 @@ export default function ProfileModal({ open, setOpen }) {
                             autoComplete="current-password"
                         />
 
-                        <TextField
-                            variant="outlined"
-                            margin="normal"
-                            fullWidth
-                            name="age"
-                            label="Age"
-                            size="small"
-                            onChange={handleChange("ageDesc")}
-                            value={profile.ageDesc}
-                            autoComplete="current-password"
-                        />
+
                         <Button
                             type="submit"
                             fullWidth

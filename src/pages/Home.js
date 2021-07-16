@@ -75,15 +75,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function Home() {
   const db = firebase.firestore();
- 
+
   const classes = useStyles();
   const [userPosts, setPosts] = useState({
     posts: null
   });
- 
-  const [avatar, setAvatar] = useState({
-    src: null
-  });
+
+  
   const [post, setPost] = useState({
     postID: "",
     postContent: ""
@@ -101,8 +99,8 @@ export default function Home() {
         displayName: profile.displayName,
         postContent: post.postContent,
         date_posted: new Date().toISOString(),
-        imageURL: avatar.src,
-        likes: 0
+
+
       })
       .then((doc) => {
         post.postID = doc.id;
@@ -115,8 +113,8 @@ export default function Home() {
     displayPicture: false
   });
 
-  
- 
+
+
 
   useEffect(() => {
     let abortController = new AbortController();
@@ -144,9 +142,7 @@ export default function Home() {
               displayPicture: doc.data().profilePic
             });
           }
-          if (doc.data().profilePic === true) {
-            fetchAvatar();
-          }
+         
         })
         .catch((err) => {
           console.log(err);
@@ -156,24 +152,11 @@ export default function Home() {
         snapshot.forEach((doc) => {
           likes.unshift({ ...doc.data(), id: doc.id });
         });
-       
+
       });
     };
     fetchData();
-    const fetchAvatar = () => {
-      var storageRef = firebase.storage().ref();
-      storageRef
-        .child("images/" + currentUser.uid)
-        .getDownloadURL()
-        .then((url) => {
-          setAvatar({
-            src: url
-          });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
+
     return () => {
       setPosts({ posts: null });
       abortController.abort();
@@ -276,9 +259,9 @@ export default function Home() {
                     <Divider className={classes.divider} />
                     <CardActions disableSpacing>
                       <IconButton
-              
+
                         className={classes.button}
-                       
+
                       >
                         <FavoriteIcon />
                         <Typography> {posts.likes}</Typography>

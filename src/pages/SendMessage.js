@@ -9,11 +9,11 @@ function SendMessage({ scroll }) {
 
     async function sendMessage(e) {
         e.preventDefault();
-        const { uid, photoURL } = auth.currentUser;
+        const { uid } = auth.currentUser;
 
         await db.collection("messages").add({
             text: msg,
-            photoURL,
+
             uid,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         });
@@ -48,7 +48,7 @@ function SendMessage({ scroll }) {
                         type="submit"
                     >
                         Send
-          </Button>
+                    </Button>
                 </div>
             </form>
         </div>
