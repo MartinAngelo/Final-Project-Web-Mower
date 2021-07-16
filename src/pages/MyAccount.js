@@ -11,6 +11,7 @@ import {
   Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+
 export default function CreateProfile() {
   const [image, setImage] = useState({
     fileImage: null,
@@ -99,7 +100,6 @@ export default function CreateProfile() {
     drawerHeader: {
       display: "flex",
       alignItems: "center",
-      // necessary for content to be below app bar
       ...theme.mixins.toolbar,
       marginBottom: 2,
     },

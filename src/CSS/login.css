@@ -20,9 +20,18 @@ body {
   width : 30%;
   height: auto;
 }
+#navlogo {
+  width : 5%;
+  height: auto;
+}
 
 .pusa3 {
   width : 8%;
+  height: auto;
+}
+
+#logoProfile {
+  width : 20%;
   height: auto;
 }
 

@@ -13,9 +13,11 @@ import {
   List,
   IconButton,
   CardActions,
-  Button
+  Button,
+  Avatar
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
+import logoProfile from '../pic/logologo.png'
 
 import ProfileModal from "../components/modals/ProfileModal";
 const drawerWidth = 240;
@@ -53,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
   drawerHeader: {
     display: "flex",
     alignItems: "center",
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     marginBottom: 2
   },
@@ -92,7 +93,7 @@ export default function Home() {
   const [profile, getProfile] = useState({
     userName: "",
     displayName: "",
-  
+
 
     displayPicture: ""
   });
@@ -163,20 +164,32 @@ export default function Home() {
           })}
         >
           <div className={classes.drawerHeader} />
-          <Card variant="outlined" id="cardMyProfile">
+          <Card id="cardMyProfile">
             <CardContent>
-              <div className={classes.leftDiv}>
-                <Typography variant="h5">
-                  Full Name: {profile.displayName}
+              <div className={classes.centerDiv}>
+                <Avatar src={logoProfile} id="logoProfile" />
+              </div>
+
+
+
+              <div className={classes.centerDiv}>
+                <Typography variant="h4">
+                  {profile.displayName}
                 </Typography>
               </div>
 
-              <div className={classes.leftDiv}>
-                <Typography variant="h5">Email: {profile.userName}</Typography>
+              <div className={classes.centerDiv}>
+                <Typography variant="h5">
+                  Following 7 | Followers {postCount}
+                </Typography>
               </div>
 
-             
-              <div className={classes.leftDiv}>
+              <div className={classes.centerDiv}>
+                <Typography variant="h5">{profile.userName}</Typography>
+              </div>
+
+
+              <div className={classes.centerDiv}>
                 <Typography variant="h5">Post/s: {postCount}</Typography>
               </div>
 
