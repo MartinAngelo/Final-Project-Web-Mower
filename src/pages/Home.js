@@ -22,8 +22,9 @@ import {
   IconButton,
   CardActions,
 } from "@material-ui/core";
-import FavoriteIcon from "@material-ui/icons/ThumbUpAlt";
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import FavoriteIcon from "@material-ui/icons/Favorite";
+
+import ChatBubbleOutlineIcon from '@material-ui/icons/Chat';
 import ShareIcon from '@material-ui/icons/Share';
 
 const drawerWidth = 240;
@@ -264,11 +265,24 @@ export default function Home() {
 
                       <IconButton className={classes.button} >
                         <FavoriteIcon />
+
+                      </IconButton>
+                      <IconButton className={classes.button} >
+
                         <ChatBubbleOutlineIcon />
+
+                      </IconButton>
+
+                      <IconButton className={classes.button} >
+
+
                         <ShareIcon />
                       </IconButton>
+
+
+
                     </CardActions>
-                    
+
 
                   </Card>
                 );
