@@ -60,8 +60,7 @@ export default function Register() {
               var storageRef = storage.ref();
               var uploadTask = storageRef.child("images/" + currentUser.uid).put(".././assets/images/profile.png");
               uploadTask.then(() => {
-                history.push("/createprofile");
-
+                history.push("/profile");
 
 
               })
