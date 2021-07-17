@@ -15,8 +15,6 @@ export default function Register() {
     fname: "",
   });
 
-
-
   const handleChange = (prop) => (e) => {
     setPayload({ ...payload, [prop]: e.target.value });
   };
