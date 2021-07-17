@@ -13,12 +13,14 @@ import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
+
+
 const headersData = [
   {
     label: "HOME",
     href: "/home",
   },
-  
+
   {
     label: "MESSAGES",
     href: "/chat",
@@ -94,6 +96,7 @@ export default function Header() {
   const displayDesktop = () => {
     return (
       <Toolbar className={toolbar}>
+
         {femmecubatorLogo}
         <div>{getMenuButtons()}</div>
       </Toolbar>
@@ -156,11 +159,16 @@ export default function Header() {
     });
   };
 
+
+
   const femmecubatorLogo = (
-    <Typography variant="h6" component="h1" className={logo}>
+
+
+    <Typography variant="h6" component="h1" className={logo} >
 
       Meower
     </Typography>
+
   );
 
   const getMenuButtons = () => {

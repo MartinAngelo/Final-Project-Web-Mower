@@ -27,6 +27,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ChatBubbleOutlineIcon from '@material-ui/icons/Chat';
 import ShareIcon from '@material-ui/icons/Share';
 
+import pusa3 from '../pic/pusa.png'
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -193,7 +195,7 @@ export default function Home() {
                   startAdornment: (
                     <InputAdornment position="start">
                       <Avatar
-                        src={logologo}
+                        src={pusa3}
                       />
                     </InputAdornment>
                   )
