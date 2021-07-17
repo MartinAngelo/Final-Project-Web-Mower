@@ -66,7 +66,7 @@ function App() {
           size={150}
           style={{ color: "rgba(255, 137, 65, 1)" }}
         />
-        ;
+        
       </div>
     );
   }

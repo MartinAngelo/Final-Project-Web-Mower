@@ -24,8 +24,6 @@ function Chat() {
       <Navigation />
       <div className="containermsg">
         <div className="msgs">
-
-
           {messages.map(({ id, text, uid }) => (
             <div>
               <div
@@ -33,7 +31,6 @@ function Chat() {
                 className={`msg ${uid === auth.currentUser.uid ? "sent" : "received"
                   }`}
               >
-
                 <p>{text}</p>
               </div>
             </div>
